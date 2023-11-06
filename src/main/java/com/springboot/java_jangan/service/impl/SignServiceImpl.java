@@ -11,15 +11,21 @@ import com.springboot.java_jangan.data.repository.UserRepository;
 import com.springboot.java_jangan.service.SignService;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.util.Collections;
 
 @Service
 
 public class SignServiceImpl implements SignService {
     private final Logger LOGGER = (Logger)LoggerFactory.getLogger(SignServiceImpl.class);
+
+
 
     public UserRepository userRepository;
     public JwtTokenProvider jwtTokenProvider;
@@ -98,6 +104,7 @@ public class SignServiceImpl implements SignService {
         }
 
     }
+
     private void setSuccessResult(SignUpResultDto result){
         result.setSuccess(true);
         result.setCode(CommonResponse.SUCCESS.getCode());

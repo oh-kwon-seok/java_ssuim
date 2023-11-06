@@ -7,6 +7,8 @@ import com.springboot.java_jangan.data.dto.SignUpResultDto;
 import com.springboot.java_jangan.data.entity.User;
 import com.springboot.java_jangan.service.SignService;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -17,6 +19,9 @@ import org.springframework.web.bind.annotation.*;
 
 import io.swagger.v3.oas.annotations.Parameter;
 
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -59,6 +64,8 @@ public class SignController {
         }
         return signInResultDto;
     }
+
+
 
     @GetMapping(value= "/exception")
     public void exceptionTest() throws RuntimeException {

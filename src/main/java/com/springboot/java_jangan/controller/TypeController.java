@@ -29,7 +29,7 @@ public class TypeController {
         this.typeService = typeService;
     }
 
-    @GetMapping(value= "/total_select")
+    @GetMapping(value= "/select")
     public ResponseEntity<List<Type>> getTotalType(@ModelAttribute TypeSearchDto typeSearchDto) throws RuntimeException{
 
         long currentTime = System.currentTimeMillis();
@@ -41,12 +41,12 @@ public class TypeController {
         return ResponseEntity.status(HttpStatus.OK).body(selectedTotalType);
 
     }
-    @GetMapping(value= "/select")
+    @GetMapping(value= "/info_select")
     public ResponseEntity<List<Type>> getType(@ModelAttribute TypeSearchDto typeSearchDto) throws RuntimeException{
 
         long currentTime = System.currentTimeMillis();
 
-        List<Type> selectedTotalType = typeService.getTotalType(typeSearchDto);
+        List<Type> selectedTotalType = typeService.getType(typeSearchDto);
 
         LOGGER.info("[getTotalType] response Time: {}ms,{}", System.currentTimeMillis() - currentTime);
 

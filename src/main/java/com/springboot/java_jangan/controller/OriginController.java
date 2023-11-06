@@ -28,7 +28,7 @@ public class OriginController {
     public OriginController(OriginService originService){
         this.originService = originService;
     }
-    @GetMapping(value= "/total_select")
+    @GetMapping(value= "/select")
     public ResponseEntity<List<Origin>> getTotalOrigin(@ModelAttribute OriginSearchDto originSearchDto) throws RuntimeException{
 
         long currentTime = System.currentTimeMillis();
@@ -40,12 +40,12 @@ public class OriginController {
         return ResponseEntity.status(HttpStatus.OK).body(selectedTotalOrigin);
 
     }
-    @GetMapping(value= "/select")
+    @GetMapping(value= "/info_select")
     public ResponseEntity<List<Origin>> getOrigin(@ModelAttribute OriginSearchDto originSearchDto) throws RuntimeException{
 
         long currentTime = System.currentTimeMillis();
 
-        List<Origin> selectedTotalOrigin = originService.getTotalOrigin(originSearchDto);
+        List<Origin> selectedTotalOrigin = originService.getOrigin(originSearchDto);
 
         LOGGER.info("[getTotalOrigin] response Time: {}ms,{}", System.currentTimeMillis() - currentTime);
 

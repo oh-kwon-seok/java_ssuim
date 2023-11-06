@@ -28,7 +28,7 @@ public class StandardController {
     public StandardController(StandardService standardService){
         this.standardService = standardService;
     }
-    @GetMapping(value= "/total_select")
+    @GetMapping(value= "/select")
     public ResponseEntity<List<Standard>> getTotalStandard(@ModelAttribute StandardSearchDto standardSearchDto) throws RuntimeException{
 
         long currentTime = System.currentTimeMillis();
@@ -40,12 +40,12 @@ public class StandardController {
         return ResponseEntity.status(HttpStatus.OK).body(selectedTotalStandard);
 
     }
-    @GetMapping(value= "/select")
+    @GetMapping(value= "/info_select")
     public ResponseEntity<List<Standard>> getStandard(@ModelAttribute StandardSearchDto standardSearchDto) throws RuntimeException{
 
         long currentTime = System.currentTimeMillis();
 
-        List<Standard> selectedTotalStandard = standardService.getTotalStandard(standardSearchDto);
+        List<Standard> selectedTotalStandard = standardService.getStandard(standardSearchDto);
 
         LOGGER.info("[getTotalStandard] response Time: {}ms,{}", System.currentTimeMillis() - currentTime);
 

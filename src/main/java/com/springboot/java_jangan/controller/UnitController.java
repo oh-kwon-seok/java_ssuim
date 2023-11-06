@@ -30,7 +30,7 @@ public class UnitController {
         this.unitService = unitService;
     }
 
-    @GetMapping(value= "/total_select")
+    @GetMapping(value= "/select")
     public ResponseEntity<List<Unit>> getTotalUnit(@ModelAttribute UnitSearchDto unitSearchDto) throws RuntimeException{
 
         long currentTime = System.currentTimeMillis();
@@ -42,12 +42,12 @@ public class UnitController {
         return ResponseEntity.status(HttpStatus.OK).body(selectedTotalUnit);
 
     }
-    @GetMapping(value= "/select")
+    @GetMapping(value= "/info_select")
     public ResponseEntity<List<Unit>> getUnit(@ModelAttribute UnitSearchDto unitSearchDto) throws RuntimeException{
 
         long currentTime = System.currentTimeMillis();
 
-        List<Unit> selectedTotalUnit = unitService.getTotalUnit(unitSearchDto);
+        List<Unit> selectedTotalUnit = unitService.getUnit(unitSearchDto);
 
         LOGGER.info("[getTotalUnit] response Time: {}ms,{}", System.currentTimeMillis() - currentTime);
 
