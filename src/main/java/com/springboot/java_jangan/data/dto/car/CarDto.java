@@ -1,4 +1,4 @@
-package com.springboot.java_jangan.data.dto.type;
+package com.springboot.java_jangan.data.dto.car;
 
 import lombok.*;
 
@@ -8,17 +8,20 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 
-public class TypeDto {
+
+
+public class CarDto {
     private Long uid;
     private String name;
     private Long used;
     private String token;
 
-    public TypeDto(Long uid, String name, Long used, String token){
+    public CarDto(Long uid, String name, Long used, String token){
         this.uid = uid;
         this.name = name;
         this.used = used;
         this.token = token;
 
     }
+
 }

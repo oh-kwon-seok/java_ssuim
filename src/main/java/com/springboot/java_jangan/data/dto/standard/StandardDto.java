@@ -1,10 +1,13 @@
 package com.springboot.java_jangan.data.dto.standard;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@Data
+@NoArgsConstructor
+@ToString
+
 public class StandardDto {
     private Long uid;
     private String name;

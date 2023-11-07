@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
@@ -31,49 +33,27 @@ public class SecurityConfiguration  {
 
                 .csrf((csrf)-> csrf.disable())
                 .cors((cors)-> cors.disable())
-
-
                 .sessionManagement((sessionManagement) ->
                         sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
-
                 .authorizeRequests((authorizeRequests) ->
                 authorizeRequests
                         .requestMatchers("/api-docs","/api-docs/json/**", "/swagger-resources/**",
                                 "/swagger-ui/**", "webjars/**","/swagger/**","/**/**").permitAll()
 
-//                        .requestMatchers(HttpMethod.POST,"/product/save").permitAll()
-
-
                         .anyRequest().hasRole("ADMIN")
 
-                        .and()
-
+                      .and()
                         .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
 
 
                 );
 
-//                .csrf((csrf)-> csrf.ignoringRequestMatchers("/product/**","/product").csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()));
 
 
 
         return http.build();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

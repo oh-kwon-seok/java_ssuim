@@ -12,8 +12,8 @@ import lombok.*;
 @AllArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-@Table(name="unit")
-public class Unit extends BaseEntity{
+@Table(name="car")
+public class Car extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

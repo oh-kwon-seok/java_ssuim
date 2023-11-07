@@ -30,9 +30,9 @@ public class OriginDAOImpl implements OriginDAO {
 
         origin.setName(originDto.getName());
         origin.setUsed(Math.toIntExact(originDto.getUsed()));
-      
+
         origin.setCreated(LocalDateTime.now());
-        
+
         Origin insertOrigin = originRepository.save(origin);
         return insertOrigin;
 
