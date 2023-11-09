@@ -6,8 +6,13 @@ import com.springboot.java_jangan.common.CommonResponse;
 import com.springboot.java_jangan.config.security.JwtTokenProvider;
 import com.springboot.java_jangan.data.dto.SignInResultDto;
 import com.springboot.java_jangan.data.dto.SignUpResultDto;
+import com.springboot.java_jangan.data.dto.car.CarDto;
+import com.springboot.java_jangan.data.dto.user.UserDto;
+import com.springboot.java_jangan.data.entity.Car;
+import com.springboot.java_jangan.data.entity.Unit;
 import com.springboot.java_jangan.data.entity.User;
 import com.springboot.java_jangan.data.repository.UserRepository;
+import com.springboot.java_jangan.data.repository.car.CarRepository;
 import com.springboot.java_jangan.service.SignService;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +23,9 @@ import org.springframework.stereotype.Service;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
+import java.time.LocalDateTime;
 import java.util.Collections;
+import java.util.Optional;
 
 @Service
 
@@ -28,49 +35,86 @@ public class SignServiceImpl implements SignService {
 
 
     public UserRepository userRepository;
+    public CarRepository carRepository;
+
     public JwtTokenProvider jwtTokenProvider;
     public PasswordEncoder passwordEncoder;
 
     @Autowired
-    public SignServiceImpl(UserRepository userRepository, JwtTokenProvider jwtTokenProvider,PasswordEncoder passwordEncoder){
+    public SignServiceImpl(UserRepository userRepository, CarRepository carRepository,JwtTokenProvider jwtTokenProvider,PasswordEncoder passwordEncoder){
         this.userRepository = userRepository;
+        this.carRepository = carRepository;
         this.jwtTokenProvider = jwtTokenProvider;
         this.passwordEncoder = passwordEncoder;
     }
 
     @Override
-    public SignUpResultDto signUp(String id,String password,String name, String auth) {
+    public  SignUpResultDto signUp(UserDto userDto) throws RuntimeException{
+        String id = userDto.getId();
+        String code = userDto.getCode();
+        String name = userDto.getName();
+        String password = userDto.getPassword();
 
-        LOGGER.info("[getSignUpResult] 회원 가입 정보 전달 userId:{}, userName:{},auth:{},test:{}",id,name,auth,auth.equalsIgnoreCase("admin"));
+        String email = userDto.getEmail();
+        String phone = userDto.getPhone();
+        String auth = userDto.getAuth();
+
+
+        Car car = carRepository.findByUid(Long.valueOf(userDto.getCar_uid()));
+        Optional<User> selectedUser = Optional.ofNullable(userRepository.getById(userDto.getId()));
+
+        LOGGER.info("[selectUser] : {}",selectedUser.isPresent());
+
         User user;
-        if (auth.equalsIgnoreCase("admin")) {
-            user = User.builder()
-                    .id(id)
-                    .name(name)
-                    .password(passwordEncoder.encode(password))
-                    .auth(Collections.singletonList("ROLE_ADMIN"))
-                    .build();
-        } else {
-            user = User.builder()
-                    .id(id)
-                    .name(name)
-                    .password(passwordEncoder.encode(password))
-                    .auth(Collections.singletonList("ROLE_USER"))
-                    .build();
-        }
+        SignUpResultDto signUpResultDto = new SignUpResultDto();
 
-        User savedUser = userRepository.save(user);
-        SignUpResultDto signUpResultDto = new SignInResultDto();
+        if(selectedUser.isPresent()){
 
-        LOGGER.info("[getSignUpResult] userEntity 값이 들어왔는지 확인 후 결과값 주입");
-        if(!savedUser.getUsername().isEmpty()){
-            LOGGER.info("[getSignUpResult] 정상 처리 완료");
-            setSuccessResult(signUpResultDto);
-        }else {
-            LOGGER.info("[getSignUpResult] 실패 처리 완료");
             setFailResult(signUpResultDto);
+            return signUpResultDto;
+
+        }else{
+            if (auth.equalsIgnoreCase("admin")) {
+                user = User.builder()
+                        .id(id)
+                        .code(code)
+                        .name(name)
+                        .password(passwordEncoder.encode(password))
+                        .email(email)
+                        .phone(phone)
+                        .car(car)
+                        .auth(Collections.singletonList("ROLE_ADMIN"))
+                        .created(LocalDateTime.now())
+                        .used(1)
+                        .build();
+                userRepository.save(user);
+
+                setSuccessResult(signUpResultDto);
+                return signUpResultDto;
+
+            } else if(auth.equalsIgnoreCase("user")){
+                user = User.builder()
+                        .id(id)
+                        .code(code)
+                        .name(name)
+                        .password(passwordEncoder.encode(password))
+                        .email(email)
+                        .phone(phone)
+                        .car(car)
+                        .auth(Collections.singletonList("ROLE_USER"))
+                        .created(LocalDateTime.now())
+                        .used(1)
+                        .build();
+                userRepository.save(user);
+                setSuccessResult(signUpResultDto);
+                return signUpResultDto;
+            }else{
+                throw new RuntimeException();
+            }
+
         }
-        return signUpResultDto;
+
+
     }
 
     @Override

@@ -49,7 +49,12 @@ public class ProductController {
         Product insertProduct = productService.saveProduct(productDto);
         LOGGER.info("[createProduct] response Time : {}ms", System.currentTimeMillis() - currentTime);
         return ResponseEntity.status(HttpStatus.OK).body(insertProduct);
+
+
+
+
     }
+
     @PostMapping(value= "/update", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Product> updateProduct(@RequestBody ProductDto productDto)
             throws Exception{

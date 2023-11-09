@@ -4,11 +4,9 @@ package com.springboot.java_jangan.controller;
 import ch.qos.logback.classic.Logger;
 import com.springboot.java_jangan.data.dto.SignInResultDto;
 import com.springboot.java_jangan.data.dto.SignUpResultDto;
+import com.springboot.java_jangan.data.dto.user.UserDto;
 import com.springboot.java_jangan.data.entity.User;
 import com.springboot.java_jangan.service.SignService;
-import io.swagger.v3.oas.annotations.enums.ParameterIn;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -17,11 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-import io.swagger.v3.oas.annotations.Parameter;
-
-import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,19 +31,15 @@ public class SignController {
         this.signService = signService;
     }
 
-    @PostMapping(value= "/sign-up")
-    public SignUpResultDto signUp(
-            @Parameter(name= "id", in = ParameterIn.QUERY) @RequestParam String id,
-            @Parameter(name= "password") @RequestParam String password,
-            @Parameter(name= "name") @RequestParam String name,
-            @Parameter(name= "auth") @RequestParam String auth) throws RuntimeException {
+    
+    @PostMapping(value= "/sign-up",consumes = "application/json", produces = "application/json")
+    public SignUpResultDto signUp(@RequestBody UserDto userDto) throws RuntimeException {
+        long currentTime = System.currentTimeMillis();
 
-        LOGGER.info("[signUp] 회원가입을 수행합니다.id: {}, passsword : ****, name : {}, role : {}",id,name,auth);
-        SignUpResultDto signUpResultDto = signService.signUp(id,password,name,auth);
-        LOGGER.info("[signUp] 회원가입을 완료했습니다.id:{}",id);
+        SignUpResultDto signUpResultDto = signService.signUp(userDto);
+
         return signUpResultDto;
     }
-
 
     @PostMapping(value= "/sign-in", consumes = "application/json", produces = "application/json")
     public SignInResultDto signIn(
@@ -77,7 +66,7 @@ public class SignController {
     @ExceptionHandler(value= RuntimeException.class)
     public ResponseEntity<Map<String,String>>  ExceptionHandler(RuntimeException e){
         HttpHeaders responseHeaders = new HttpHeaders();
-        //responseHeaders.add(HttpHeaders.CONTENT_TYPE, "appication/json");
+//        responseHeaders.add(HttpHeaders.CONTENT_TYPE, "appication/json");
         HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
         LOGGER.error("ExceptionHandler 호출,{},{}", e.getCause(),e.getMessage());
         Map<String,String> map = new HashMap<>();
