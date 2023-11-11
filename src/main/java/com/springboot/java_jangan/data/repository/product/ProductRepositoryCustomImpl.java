@@ -45,7 +45,7 @@ public class ProductRepositoryCustomImpl extends QuerydslRepositorySupport imple
 
         if("all".equals(filter_title)){
             if (product.name != null) {
-               builder.or(product.name.like("%" + search_text + "%"));
+                builder.or(product.name.like("%" + search_text + "%"));
             }
             if (product.unit != null) {
                 builder.or(unit.name.like("%" + search_text + "%"));

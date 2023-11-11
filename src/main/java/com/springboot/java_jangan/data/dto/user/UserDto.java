@@ -16,6 +16,7 @@ public class UserDto {
     private String password;
 
     private String name;
+    private String customer_name;
     private String email;
     private String phone;
 
@@ -25,15 +26,17 @@ public class UserDto {
     private Long used;
     private String token;
 
-    public UserDto( String id,String code,String password,String name,String email,String phone, Long car_uid, String auth, Long used, String token){
+    public UserDto( String id,String code,String customer_name,String password,String name,String email,String phone, Long car_uid, String auth, Long used, String token){
 
         this.name = name;
         this.id = id;
         this.code = code;
         this.password = password;
         this.name = name;
+        this.customer_name = customer_name;
         this.email = email;
         this.phone = phone;
+
         this.car_uid = car_uid;
         this.auth = auth;
         this.used = used;

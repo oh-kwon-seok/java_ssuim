@@ -4,6 +4,7 @@ package com.springboot.java_jangan.data.entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -33,12 +34,14 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String code;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(nullable = false)
     private String password;
 
     @Column(nullable = false)
     private String name;
+    private String customer_name;
+
     private String email;
     private String phone;
 
@@ -47,6 +50,8 @@ public class User implements UserDetails {
     @JoinColumn(name="car_uid")
     private Car car;
 
+    @CreatedDate
+    @Column(updatable = false)
     private LocalDateTime created;
 
     @LastModifiedDate

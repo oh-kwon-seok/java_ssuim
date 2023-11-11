@@ -30,6 +30,8 @@ public class QUser extends EntityPathBase<User> {
 
     public final DateTimePath<java.time.LocalDateTime> created = createDateTime("created", java.time.LocalDateTime.class);
 
+    public final StringPath customer_name = createString("customer_name");
+
     public final DateTimePath<java.time.LocalDateTime> deleted = createDateTime("deleted", java.time.LocalDateTime.class);
 
     public final StringPath email = createString("email");

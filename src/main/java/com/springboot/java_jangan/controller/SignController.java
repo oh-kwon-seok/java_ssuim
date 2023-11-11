@@ -4,7 +4,10 @@ package com.springboot.java_jangan.controller;
 import ch.qos.logback.classic.Logger;
 import com.springboot.java_jangan.data.dto.SignInResultDto;
 import com.springboot.java_jangan.data.dto.SignUpResultDto;
+import com.springboot.java_jangan.data.dto.product.ProductSearchDto;
 import com.springboot.java_jangan.data.dto.user.UserDto;
+import com.springboot.java_jangan.data.dto.user.UserSearchDto;
+import com.springboot.java_jangan.data.entity.Product;
 import com.springboot.java_jangan.data.entity.User;
 import com.springboot.java_jangan.service.SignService;
 import org.slf4j.LoggerFactory;
@@ -16,12 +19,13 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173") // 🌟 추가
 
-@RequestMapping("/sign-api")
+@RequestMapping("/user")
 public class SignController {
     private final Logger LOGGER = (Logger) LoggerFactory.getLogger(SignController.class);
     private final SignService signService;
@@ -31,12 +35,32 @@ public class SignController {
         this.signService = signService;
     }
 
-    
-    @PostMapping(value= "/sign-up",consumes = "application/json", produces = "application/json")
-    public SignUpResultDto signUp(@RequestBody UserDto userDto) throws RuntimeException {
+
+
+    @GetMapping(value= "/select")
+    public ResponseEntity<List<User>> getTotalUser(@ModelAttribute UserSearchDto userSearchDto) throws RuntimeException{
         long currentTime = System.currentTimeMillis();
 
-        SignUpResultDto signUpResultDto = signService.signUp(userDto);
+        List<User> selectedTotalUser = signService.getTotalUser(userSearchDto);
+
+        LOGGER.info("[getTotalUser] response Time: {}ms,{}", System.currentTimeMillis() - currentTime);
+        return ResponseEntity.status(HttpStatus.OK).body(selectedTotalUser);
+    }
+
+    @PostMapping(value= "/save",consumes = "application/json", produces = "application/json")
+    public SignUpResultDto save(@RequestBody UserDto userDto) throws RuntimeException {
+        long currentTime = System.currentTimeMillis();
+
+        SignUpResultDto signUpResultDto = signService.save(userDto);
+
+        return signUpResultDto;
+    }
+
+    @PostMapping(value= "/update",consumes = "application/json", produces = "application/json")
+    public SignUpResultDto update(@RequestBody UserDto userDto) throws RuntimeException {
+        long currentTime = System.currentTimeMillis();
+
+        SignUpResultDto signUpResultDto = signService.update(userDto);
 
         return signUpResultDto;
     }
@@ -52,6 +76,13 @@ public class SignController {
             LOGGER.info("[signIn] 정상적으로 로그인되었습니다.id: {}, token : {}",user.getId(), signInResultDto.getToken());
         }
         return signInResultDto;
+    }
+
+    @PostMapping(value= "/delete", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<String> delete(@RequestBody Map<String, List<String>> requestMap) throws Exception {
+        List<String> id = requestMap.get("id");
+        signService.delete(id);
+        return ResponseEntity.status(HttpStatus.OK).body("정상적으로 삭제되었습니다.");
     }
 
 
