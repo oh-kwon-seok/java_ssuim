@@ -10,9 +10,13 @@ import com.springboot.java_jangan.data.dto.SignUpResultDto;
 import com.springboot.java_jangan.data.dto.user.UserDto;
 import com.springboot.java_jangan.data.dto.user.UserSearchDto;
 import com.springboot.java_jangan.data.entity.Car;
+import com.springboot.java_jangan.data.entity.Product;
 import com.springboot.java_jangan.data.entity.User;
+import com.springboot.java_jangan.data.entity.UserProduct;
 import com.springboot.java_jangan.data.repository.User.UserRepository;
+import com.springboot.java_jangan.data.repository.UserProduct.UserProductRepository;
 import com.springboot.java_jangan.data.repository.car.CarRepository;
+import com.springboot.java_jangan.data.repository.product.ProductRepository;
 import com.springboot.java_jangan.service.SignService;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +27,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -33,18 +38,26 @@ public class SignServiceImpl implements SignService {
 
 
     public UserRepository userRepository;
+    public ProductRepository productRepository;
+    public UserProductRepository userProductRepository;
+
     public CarRepository carRepository;
 
     public JwtTokenProvider jwtTokenProvider;
     public PasswordEncoder passwordEncoder;
 
     @Autowired
-    public SignServiceImpl(@Qualifier("userDAOImpl") UserDAO userDAO, UserRepository userRepository, CarRepository carRepository, JwtTokenProvider jwtTokenProvider, PasswordEncoder passwordEncoder){
+    public SignServiceImpl(@Qualifier("userDAOImpl") UserDAO userDAO, UserRepository userRepository, ProductRepository productRepository,  UserProductRepository userProductRepository,CarRepository carRepository, JwtTokenProvider jwtTokenProvider, PasswordEncoder passwordEncoder){
         this.userDao = userDAO;
         this.userRepository = userRepository;
+        this.userProductRepository = userProductRepository;
+
+        this.productRepository = productRepository;
+
         this.carRepository = carRepository;
         this.jwtTokenProvider = jwtTokenProvider;
         this.passwordEncoder = passwordEncoder;
+
     }
 
 
@@ -137,16 +150,18 @@ public class SignServiceImpl implements SignService {
         String customer_name = userDto.getCustomer_name();
 
         String password = userDto.getPassword();
-        LOGGER.info("[PASSWORD] : {}",password);
+
+        LOGGER.info("[userDto] : {}",userDto.getUser_product());
         String email = userDto.getEmail();
         String phone = userDto.getPhone();
         String auth = userDto.getAuth();
 
 
         Car car = carRepository.findByUid(Long.valueOf(userDto.getCar_uid()));
+
         Optional<User> selectedUser = Optional.ofNullable(userRepository.getById(userDto.getId()));
 
-        LOGGER.info("[selectUser] : {}",selectedUser.isPresent());
+
 
         User user;
         SignUpResultDto signUpResultDto = new SignUpResultDto();
@@ -168,6 +183,32 @@ public class SignServiceImpl implements SignService {
                         .used(Math.toIntExact(userDto.getUsed()))
                         .build();
                 userRepository.save(user);
+                // UserProduct 저장
+
+                List<Map<String, Object>> userProductList = userDto.getUser_product();
+                if (userProductList != null) {
+
+                    for (Map<String, Object> userProductData : userProductList) {
+                        UserProduct userProduct = new UserProduct();
+                        // userProduct에 필요한 데이터를 userProductData에서 가져와 설정
+                        // 예시: userProduct.setName(userProductData.get("name").toString());
+                        userProduct.setQty(Integer.parseInt(userProductData.get("qty").toString()));
+                        userProduct.setUser(user);
+
+                        // product_uid 값이 있다면 product를 가져와서 userProduct에 설정
+                        if (userProductData.containsKey("product_uid")) {
+                            Long productUid = Long.parseLong(userProductData.get("product_uid").toString());
+                            Product product = productRepository.findById(productUid)
+                                    .orElseThrow(() -> new RuntimeException("Product not found for product_uid: " + productUid));
+                            userProduct.setProduct(product);
+                        }
+                        userProduct.setCreated(LocalDateTime.now());
+                        userProduct.setUpdated(LocalDateTime.now());
+
+                        userProductRepository.save(userProduct);
+                    }
+                }
+
 
                 setSuccessResult(signUpResultDto);
                 return signUpResultDto;
@@ -187,6 +228,12 @@ public class SignServiceImpl implements SignService {
                         .used(Math.toIntExact(userDto.getUsed()))
                         .build();
                 userRepository.save(user);
+
+
+
+
+
+
                 setSuccessResult(signUpResultDto);
                 return signUpResultDto;
             }else{
