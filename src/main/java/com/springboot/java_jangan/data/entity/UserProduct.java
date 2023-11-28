@@ -21,7 +21,7 @@ public class UserProduct extends BaseEntity{
     private Long uid;
 
     @ManyToOne
-    @JoinColumn(name="user_uid")
+    @JoinColumn(name="user_id")
     private User user;
 
     @ManyToOne
