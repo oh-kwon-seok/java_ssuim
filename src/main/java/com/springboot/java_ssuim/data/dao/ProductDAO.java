@@ -16,6 +16,8 @@ public interface ProductDAO {
 
     List<Product> selectTotalProduct(ProductSearchDto productSearchDto);
 
+    List<Product> selectProduct(ProductSearchDto productSearchDto);
+
 
     Product updateProduct(ProductDto productDto) throws Exception;
 

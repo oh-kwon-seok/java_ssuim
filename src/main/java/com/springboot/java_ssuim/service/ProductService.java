@@ -14,6 +14,8 @@ public interface ProductService {
 
     List<Product> getTotalProduct(ProductSearchDto productSearchDto);
 
+    List<Product> getProduct(ProductSearchDto productSearchDto);
+
     Product saveProduct(ProductDto productDto) throws Exception;
 
     Product updateProduct(ProductDto productDto) throws Exception;

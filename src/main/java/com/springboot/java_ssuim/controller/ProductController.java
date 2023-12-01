@@ -41,6 +41,18 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).body(selectedTotalProduct);
 
     }
+    @GetMapping(value= "/info_select")
+    public ResponseEntity<List<Product>> getProduct(@ModelAttribute ProductSearchDto productSearchDto) throws RuntimeException{
+
+        long currentTime = System.currentTimeMillis();
+
+        List<Product> selectedTotalProduct = productService.getProduct(productSearchDto);
+
+        LOGGER.info("[getTotalProduct] response Time: {}ms,{}", System.currentTimeMillis() - currentTime);
+
+        return ResponseEntity.status(HttpStatus.OK).body(selectedTotalProduct);
+
+    }
 
     @PostMapping(value= "/save", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Product> createProduct(@RequestBody ProductDto productDto) throws Exception{

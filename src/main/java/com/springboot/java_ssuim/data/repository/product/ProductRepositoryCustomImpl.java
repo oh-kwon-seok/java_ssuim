@@ -88,6 +88,20 @@ public class ProductRepositoryCustomImpl extends QuerydslRepositorySupport imple
 
         return productList;
     }
+    @Override
+    public List<Product> findInfo(ProductSearchDto ProductSearchDto){
+
+        QProduct product = QProduct.product;
+
+        Predicate used = product.used.eq(1);
+
+        List<Product> productList = from(product)
+                .select(product)
+                .where(used)
+                .fetch();
+
+        return productList;
+    }
 
 
 }

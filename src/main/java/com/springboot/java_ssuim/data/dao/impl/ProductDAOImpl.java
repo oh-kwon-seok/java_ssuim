@@ -62,6 +62,11 @@ public class ProductDAOImpl implements ProductDAO {
         return productRepository.findAll(productSearchDto);
 
     }
+    @Override
+    public List<Product> selectProduct(ProductSearchDto productSearchDto) {
+        return productRepository.findInfo(productSearchDto);
+
+    }
 
     @Override
     public Product updateProduct(ProductDto productDto) throws Exception {
