@@ -1,138 +1,142 @@
-[2023-12-01 15:07:35.027] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication Starting SecurityApplication using Java 17.0.7 with PID 32888 (C:\Users\ohks4\Desktop\프로젝트\ssuim\java_ssuim\out\production\classes started by kwonseok in C:\Users\ohks4\Desktop\프로젝트\ssuim\java_ssuim)
-[2023-12-01 15:07:35.034] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication No active profile set, falling back to 1 default profile: "default"
-[2023-12-01 15:07:36.176] [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2023-12-01 15:07:36.265] [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 80 ms. Found 2 JPA repository interfaces.
-[2023-12-01 15:07:36.831] [INFO ] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8081 (http)
-[2023-12-01 15:07:36.840] [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8081"]
-[2023-12-01 15:07:36.842] [INFO ] [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
-[2023-12-01 15:07:36.842] [INFO ] [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
-[2023-12-01 15:07:36.959] [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
-[2023-12-01 15:07:36.961] [INFO ] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1882 ms
-[2023-12-01 15:07:37.169] [INFO ] [main] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
-[2023-12-01 15:07:37.229] [INFO ] [main] org.hibernate.Version HHH000412: Hibernate ORM core version 6.2.6.Final
-[2023-12-01 15:07:37.231] [INFO ] [main] org.hibernate.cfg.Environment HHH000406: Using bytecode reflection optimizer
-[2023-12-01 15:07:37.384] [INFO ] [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator HHH000021: Bytecode provider name : bytebuddy
-[2023-12-01 15:07:37.537] [INFO ] [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo No LoadTimeWeaver setup: ignoring JPA class transformer
-[2023-12-01 15:07:37.555] [INFO ] [main] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
-[2023-12-01 15:07:37.632] [INFO ] [main] com.zaxxer.hikari.pool.HikariPool HikariPool-1 - Added connection org.mariadb.jdbc.Connection@546083d6
-[2023-12-01 15:07:37.634] [INFO ] [main] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
-[2023-12-01 15:07:37.924] [INFO ] [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator HHH000021: Bytecode provider name : bytebuddy
-[2023-12-01 15:07:38.596] [INFO ] [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[2023-12-01 15:07:38.599] [INFO ] [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2023-12-01 15:07:38.878] [INFO ] [main] com.springboot.java_ssuim.config.security.JwtTokenProvider [init] JwtTokenProvider 내 secretKey 초기화 시작
-[2023-12-01 15:07:38.879] [INFO ] [main] com.springboot.java_ssuim.config.security.JwtTokenProvider [init] Jwt Token Provider내 secretKey 초기화 완료
-[2023-12-01 15:07:39.067] [WARN ] [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2023-12-01 15:07:39.321] [WARN ] [main] org.springframework.core.LocalVariableTableParameterNameDiscoverer Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.springboot.java_ssuim.config.actuator.NoteEndpoint
-[2023-12-01 15:07:39.364] [INFO ] [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 12 endpoint(s) beneath base path '/actuator'
-[2023-12-01 15:07:39.402] [INFO ] [main] org.springframework.security.web.DefaultSecurityFilterChain Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1d642682, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6afdb486, org.springframework.security.web.context.SecurityContextHolderFilter@7640a191, org.springframework.security.web.header.HeaderWriterFilter@6a90b5e8, org.springframework.security.web.authentication.logout.LogoutFilter@4ba32242, com.springboot.java_ssuim.config.security.JwtAuthenticationFilter@321bf4b1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48e1e18a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74997ca6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@598f6c93, org.springframework.security.web.session.SessionManagementFilter@406cc81b, org.springframework.security.web.access.ExceptionTranslationFilter@eb5471c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@722e1bff]
-[2023-12-01 15:07:39.698] [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8081"]
-[2023-12-01 15:07:39.716] [INFO ] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8081 (http) with context path ''
-[2023-12-01 15:07:39.727] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication Started SecurityApplication in 5.155 seconds (process running for 5.871)
-[2023-12-01 15:07:40.335] [INFO ] [RMI TCP Connection(1)-10.10.10.17] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2023-12-01 15:07:40.335] [INFO ] [RMI TCP Connection(1)-10.10.10.17] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
-[2023-12-01 15:07:40.337] [INFO ] [RMI TCP Connection(1)-10.10.10.17] org.springframework.web.servlet.DispatcherServlet Completed initialization in 2 ms
-[2023-12-01 16:24:10.359] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:24:10.360] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:24:10.360] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:24:10.433] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.controller.SignController [signIn] 로그인을 시도하고 있습니다.id: ohjin999, pw: ****
-[2023-12-01 16:24:10.433] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] signDateHandler로 회원 정보 요청
-[2023-12-01 16:24:10.459] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] Id : User(id=ohjin999, password={bcrypt}$2a$10$NJHvDKvkvEf/Yt.V98tQCuhOdnW0k9DNgix80v2Xr5Cb9AXcFUX1i, name=test, email=, phone=, created=2023-11-08T15:25:08, updated=2023-11-28T17:18:23, deleted=null, used=1, auth=[ROLE_USER])
-[2023-12-01 16:24:10.516] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.service.impl.SignServiceImpl [getByID] id: User(id=ohjin999, password={bcrypt}$2a$10$NJHvDKvkvEf/Yt.V98tQCuhOdnW0k9DNgix80v2Xr5Cb9AXcFUX1i, name=test, email=, phone=, created=2023-11-08T15:25:08, updated=2023-11-28T17:18:23, deleted=null, used=1, auth=[ROLE_USER])
-[2023-12-01 16:24:10.516] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] 패스워드 비교 수행
-[2023-12-01 16:24:10.640] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] 패스워드 일치
-[2023-12-01 16:24:10.640] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] SignInResultDto 객체 생성
-[2023-12-01 16:24:10.642] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtTokenProvider [createToken] 토큰 생성 시작
-[2023-12-01 16:24:10.666] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtTokenProvider [createToken] 토큰 생성 완료
-[2023-12-01 16:24:10.666] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] SignInResultDto 객체에 값 주입 lgoger: SignInResultDto(token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvaGppbjk5OSIsImF1dGgiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTcwMTQxNTQ1MCwiZXhwIjoxNzAxNDE5MDUwfQ.NIEflXaYFjFOl0KZ10OoWcHa1nJvaiIFFh4NVkSIvA0)
-[2023-12-01 16:24:10.668] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.controller.SignController [signIn] 정상적으로 로그인되었습니다.id: ohjin999, token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvaGppbjk5OSIsImF1dGgiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTcwMTQxNTQ1MCwiZXhwIjoxNzAxNDE5MDUwfQ.NIEflXaYFjFOl0KZ10OoWcHa1nJvaiIFFh4NVkSIvA0
-[2023-12-01 16:24:16.485] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:24:16.485] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:24:16.485] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:24:16.838] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.controller.ProductController [getTotalProduct] response Time: 341ms,{}
-[2023-12-01 16:25:49.836] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:25:49.836] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:25:49.836] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:26:37.163] [INFO ] [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
-[2023-12-01 16:26:37.164] [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
-[2023-12-01 16:26:37.166] [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
-[2023-12-01 16:26:39.372] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication Starting SecurityApplication using Java 17.0.7 with PID 41400 (C:\Users\ohks4\Desktop\프로젝트\ssuim\java_ssuim\out\production\classes started by kwonseok in C:\Users\ohks4\Desktop\프로젝트\ssuim\java_ssuim)
-[2023-12-01 16:26:39.374] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication No active profile set, falling back to 1 default profile: "default"
-[2023-12-01 16:26:40.321] [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2023-12-01 16:26:40.414] [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 87 ms. Found 3 JPA repository interfaces.
-[2023-12-01 16:26:40.954] [INFO ] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8081 (http)
-[2023-12-01 16:26:40.961] [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8081"]
-[2023-12-01 16:26:40.963] [INFO ] [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
-[2023-12-01 16:26:40.963] [INFO ] [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
-[2023-12-01 16:26:41.065] [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
-[2023-12-01 16:26:41.065] [INFO ] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1648 ms
-[2023-12-01 16:26:41.287] [INFO ] [main] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
-[2023-12-01 16:26:41.350] [INFO ] [main] org.hibernate.Version HHH000412: Hibernate ORM core version 6.2.6.Final
-[2023-12-01 16:26:41.352] [INFO ] [main] org.hibernate.cfg.Environment HHH000406: Using bytecode reflection optimizer
-[2023-12-01 16:26:41.508] [INFO ] [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator HHH000021: Bytecode provider name : bytebuddy
-[2023-12-01 16:26:41.648] [INFO ] [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo No LoadTimeWeaver setup: ignoring JPA class transformer
-[2023-12-01 16:26:41.663] [INFO ] [main] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
-[2023-12-01 16:26:41.738] [INFO ] [main] com.zaxxer.hikari.pool.HikariPool HikariPool-1 - Added connection org.mariadb.jdbc.Connection@7fb82f73
-[2023-12-01 16:26:41.740] [INFO ] [main] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
-[2023-12-01 16:26:42.011] [INFO ] [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator HHH000021: Bytecode provider name : bytebuddy
-[2023-12-01 16:26:42.634] [INFO ] [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[2023-12-01 16:26:42.637] [INFO ] [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2023-12-01 16:26:42.878] [INFO ] [main] com.springboot.java_ssuim.config.security.JwtTokenProvider [init] JwtTokenProvider 내 secretKey 초기화 시작
-[2023-12-01 16:26:42.878] [INFO ] [main] com.springboot.java_ssuim.config.security.JwtTokenProvider [init] Jwt Token Provider내 secretKey 초기화 완료
-[2023-12-01 16:26:43.085] [WARN ] [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2023-12-01 16:26:43.410] [WARN ] [main] org.springframework.core.LocalVariableTableParameterNameDiscoverer Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.springboot.java_ssuim.config.actuator.NoteEndpoint
-[2023-12-01 16:26:43.460] [INFO ] [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 12 endpoint(s) beneath base path '/actuator'
-[2023-12-01 16:26:43.499] [INFO ] [main] org.springframework.security.web.DefaultSecurityFilterChain Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@70e560ef, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77228160, org.springframework.security.web.context.SecurityContextHolderFilter@394a7390, org.springframework.security.web.header.HeaderWriterFilter@178f5b5b, org.springframework.security.web.authentication.logout.LogoutFilter@7d3b4646, com.springboot.java_ssuim.config.security.JwtAuthenticationFilter@19faa9dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@58a93f51, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56589f00, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@522fc988, org.springframework.security.web.session.SessionManagementFilter@282d1023, org.springframework.security.web.access.ExceptionTranslationFilter@152bb4cc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@734eada1]
-[2023-12-01 16:26:43.861] [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8081"]
-[2023-12-01 16:26:43.882] [INFO ] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8081 (http) with context path ''
-[2023-12-01 16:26:43.894] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication Started SecurityApplication in 4.949 seconds (process running for 5.735)
-[2023-12-01 16:26:44.395] [INFO ] [RMI TCP Connection(2)-10.10.10.17] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2023-12-01 16:26:44.395] [INFO ] [RMI TCP Connection(2)-10.10.10.17] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
-[2023-12-01 16:26:44.396] [INFO ] [RMI TCP Connection(2)-10.10.10.17] org.springframework.web.servlet.DispatcherServlet Completed initialization in 1 ms
-[2023-12-01 16:26:53.227] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:26:53.227] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:26:53.229] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:26:53.673] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.controller.ShipController [getTotalShip] response Time: 386ms,{}
-[2023-12-01 16:27:41.333] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:27:41.333] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:27:41.333] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:27:41.343] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.controller.ShipController [getTotalShip] response Time: 5ms,{}
-[2023-12-01 16:29:04.417] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:29:04.418] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:29:04.418] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:29:04.428] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.controller.ShipController [getTotalShip] response Time: 6ms,{}
-[2023-12-01 16:29:04.434] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:29:04.435] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:29:04.435] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:29:04.446] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.controller.ShipController [getTotalShip] response Time: 6ms,{}
-[2023-12-01 16:30:33.062] [INFO ] [http-nio-8081-exec-8] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:30:33.062] [INFO ] [http-nio-8081-exec-8] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:30:33.062] [INFO ] [http-nio-8081-exec-8] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:30:33.070] [INFO ] [http-nio-8081-exec-8] com.springboot.java_ssuim.controller.ShipController [getTotalShip] response Time: 5ms,{}
-[2023-12-01 16:31:28.193] [INFO ] [http-nio-8081-exec-9] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:31:28.193] [INFO ] [http-nio-8081-exec-9] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:31:28.193] [INFO ] [http-nio-8081-exec-9] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:31:28.201] [INFO ] [http-nio-8081-exec-9] com.springboot.java_ssuim.controller.ShipController [getTotalShip] response Time: 4ms,{}
-[2023-12-01 16:33:29.980] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:33:29.980] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:33:29.980] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:33:29.988] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:33:29.988] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:33:29.988] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:33:30.078] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.controller.ShipController [shipDto]  : ShipDto(uid=630, area=평택5, receive_user=쿠팡(평택1물류지원파트), phone1=070-4106-8409, phone2=070-4106-8409, address=평택시 포승읍 만호리 666 BLK평택 물류센터 4층 408도크, token=, used=1)
-[2023-12-01 16:33:30.081] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.controller.ShipController [updateShip] response Time : 3ms
-[2023-12-01 16:33:30.086] [INFO ] [http-nio-8081-exec-3] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:33:30.086] [INFO ] [http-nio-8081-exec-3] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:33:30.086] [INFO ] [http-nio-8081-exec-3] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:33:30.094] [INFO ] [http-nio-8081-exec-3] com.springboot.java_ssuim.controller.ShipController [getTotalShip] response Time: 5ms,{}
-[2023-12-01 16:33:38.214] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:33:38.214] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:33:38.214] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:33:38.231] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.controller.ShipController [shipDto]  : ShipDto(uid=630, area=평택1, receive_user=쿠팡(평택1물류지원파트), phone1=070-4106-8409, phone2=070-4106-8409, address=평택시 포승읍 만호리 666 BLK평택 물류센터 4층 408도크, token=, used=1)
-[2023-12-01 16:33:38.231] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.controller.ShipController [updateShip] response Time : 0ms
-[2023-12-01 16:33:38.235] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
-[2023-12-01 16:33:38.235] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
-[2023-12-01 16:33:38.235] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
-[2023-12-01 16:33:38.241] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.controller.ShipController [getTotalShip] response Time: 4ms,{}
-[2023-12-01 16:46:36.080] [INFO ] [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
-[2023-12-01 16:46:36.082] [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
-[2023-12-01 16:46:36.085] [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+[2023-12-25 00:07:10.788] [INFO ] [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-12-25 00:07:10.853] [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+[2023-12-25 00:07:10.914] [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+[2023-12-25 17:12:48.502] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication Starting SecurityApplication using Java 17.0.9 with PID 18680 (C:\프로젝트\java_ssuim\build\classes\java\main started by ohks4 in C:\프로젝트\java_ssuim)
+[2023-12-25 17:12:48.504] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication No active profile set, falling back to 1 default profile: "default"
+[2023-12-25 17:12:49.697] [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-12-25 17:12:49.799] [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 93 ms. Found 3 JPA repository interfaces.
+[2023-12-25 17:12:50.506] [INFO ] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8081 (http)
+[2023-12-25 17:12:50.520] [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8081"]
+[2023-12-25 17:12:50.522] [INFO ] [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2023-12-25 17:12:50.522] [INFO ] [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+[2023-12-25 17:12:50.624] [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2023-12-25 17:12:50.625] [INFO ] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2069 ms
+[2023-12-25 17:12:50.986] [INFO ] [main] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-12-25 17:12:51.049] [INFO ] [main] org.hibernate.Version HHH000412: Hibernate ORM core version 6.2.6.Final
+[2023-12-25 17:12:51.051] [INFO ] [main] org.hibernate.cfg.Environment HHH000406: Using bytecode reflection optimizer
+[2023-12-25 17:12:51.239] [INFO ] [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator HHH000021: Bytecode provider name : bytebuddy
+[2023-12-25 17:12:51.383] [INFO ] [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-12-25 17:12:51.409] [INFO ] [main] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+[2023-12-25 17:12:51.529] [INFO ] [main] com.zaxxer.hikari.pool.HikariPool HikariPool-1 - Added connection org.mariadb.jdbc.Connection@1d06801f
+[2023-12-25 17:12:51.532] [INFO ] [main] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+[2023-12-25 17:12:51.839] [INFO ] [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator HHH000021: Bytecode provider name : bytebuddy
+[2023-12-25 17:12:52.587] [INFO ] [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-12-25 17:12:52.592] [INFO ] [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-12-25 17:12:52.936] [INFO ] [main] com.springboot.java_ssuim.config.security.JwtTokenProvider [init] JwtTokenProvider 내 secretKey 초기화 시작
+[2023-12-25 17:12:52.942] [INFO ] [main] com.springboot.java_ssuim.config.security.JwtTokenProvider [init] Jwt Token Provider내 secretKey 초기화 완료
+[2023-12-25 17:12:53.281] [WARN ] [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-12-25 17:12:53.694] [INFO ] [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 12 endpoint(s) beneath base path '/actuator'
+[2023-12-25 17:12:53.746] [INFO ] [main] org.springframework.security.web.DefaultSecurityFilterChain Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@21632bf8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@408708a1, org.springframework.security.web.context.SecurityContextHolderFilter@77a35b2f, org.springframework.security.web.header.HeaderWriterFilter@6ea1fc9, org.springframework.security.web.authentication.logout.LogoutFilter@7dbc77ca, com.springboot.java_ssuim.config.security.JwtAuthenticationFilter@3f7b15bb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d62bb8b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@70f37190, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2dacad1d, org.springframework.security.web.session.SessionManagementFilter@722e1bff, org.springframework.security.web.access.ExceptionTranslationFilter@53ccbc15, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6ad2cb6d]
+[2023-12-25 17:12:54.377] [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8081"]
+[2023-12-25 17:12:54.399] [INFO ] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8081 (http) with context path ''
+[2023-12-25 17:12:54.416] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication Started SecurityApplication in 6.504 seconds (process running for 7.385)
+[2023-12-25 17:12:54.805] [INFO ] [RMI TCP Connection(3)-192.168.43.190] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-12-25 17:12:54.806] [INFO ] [RMI TCP Connection(3)-192.168.43.190] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2023-12-25 17:12:54.808] [INFO ] [RMI TCP Connection(3)-192.168.43.190] org.springframework.web.servlet.DispatcherServlet Completed initialization in 2 ms
+[2023-12-25 17:15:01.846] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
+[2023-12-25 17:15:01.846] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
+[2023-12-25 17:15:01.846] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
+[2023-12-25 17:15:01.846] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
+[2023-12-25 17:15:01.846] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
+[2023-12-25 17:15:01.846] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
+[2023-12-25 17:15:01.846] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [product] 문제가 있음 : org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@65e752e6,org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse@24de0eba
+[2023-12-25 17:15:01.846] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [product] 문제가 있음 : org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@65c3aa90,org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse@2c7e675f
+[2023-12-25 17:15:02.924] [INFO ] [http-nio-8081-exec-2] com.springboot.java_ssuim.controller.ShipController [getTotalShip] response Time: 924ms,{}
+[2023-12-25 17:15:02.932] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.controller.ProductController [getTotalProduct] response Time: 932ms,{}
+[2023-12-25 17:15:09.806] [INFO ] [http-nio-8081-exec-3] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
+[2023-12-25 17:15:09.806] [INFO ] [http-nio-8081-exec-3] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
+[2023-12-25 17:15:09.809] [INFO ] [http-nio-8081-exec-3] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
+[2023-12-25 17:15:09.809] [INFO ] [http-nio-8081-exec-3] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [product] 문제가 있음 : org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@1372f374,org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse@174d65c2
+[2023-12-25 17:15:09.836] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
+[2023-12-25 17:15:09.836] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
+[2023-12-25 17:15:09.836] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
+[2023-12-25 17:15:09.836] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [product] 문제가 있음 : org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@3d552178,org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse@1ebe8c5a
+[2023-12-25 17:15:09.922] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.controller.SignController [signIn] 로그인을 시도하고 있습니다.id: ohjin999, pw: ****
+[2023-12-25 17:15:09.922] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] signDateHandler로 회원 정보 요청
+[2023-12-25 17:15:09.958] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] Id : User(id=ohjin999, password={bcrypt}$2a$10$NJHvDKvkvEf/Yt.V98tQCuhOdnW0k9DNgix80v2Xr5Cb9AXcFUX1i, name=test, email=, phone=, created=2023-11-08T15:25:08, updated=2023-11-28T17:18:23, deleted=null, used=1, auth=[ROLE_USER])
+[2023-12-25 17:15:10.008] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getByID] id: User(id=ohjin999, password={bcrypt}$2a$10$NJHvDKvkvEf/Yt.V98tQCuhOdnW0k9DNgix80v2Xr5Cb9AXcFUX1i, name=test, email=, phone=, created=2023-11-08T15:25:08, updated=2023-11-28T17:18:23, deleted=null, used=1, auth=[ROLE_USER])
+[2023-12-25 17:15:10.008] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] 패스워드 비교 수행
+[2023-12-25 17:15:10.415] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] 패스워드 일치
+[2023-12-25 17:15:10.415] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] SignInResultDto 객체 생성
+[2023-12-25 17:15:10.429] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtTokenProvider [createToken] 토큰 생성 시작
+[2023-12-25 17:15:10.484] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtTokenProvider [createToken] 토큰 생성 완료
+[2023-12-25 17:15:10.484] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] SignInResultDto 객체에 값 주입 lgoger: SignInResultDto(token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvaGppbjk5OSIsImF1dGgiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTcwMzQ5MjExMCwiZXhwIjoxNzAzNDk1NzEwfQ.1unM7MnD6UDuTHv_bwtexLsMV1p9mf48AN13rd8LMys)
+[2023-12-25 17:15:10.484] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.controller.SignController [signIn] 정상적으로 로그인되었습니다.id: ohjin999, token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvaGppbjk5OSIsImF1dGgiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTcwMzQ5MjExMCwiZXhwIjoxNzAzNDk1NzEwfQ.1unM7MnD6UDuTHv_bwtexLsMV1p9mf48AN13rd8LMys
+[2023-12-25 17:15:11.732] [INFO ] [http-nio-8081-exec-6] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
+[2023-12-25 17:15:11.732] [INFO ] [http-nio-8081-exec-6] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
+[2023-12-25 17:15:11.732] [INFO ] [http-nio-8081-exec-6] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
+[2023-12-25 17:15:11.732] [INFO ] [http-nio-8081-exec-6] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [product] 문제가 있음 : org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@ab37008,org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse@e8cf586
+[2023-12-25 17:15:11.732] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
+[2023-12-25 17:15:11.732] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
+[2023-12-25 17:15:11.732] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
+[2023-12-25 17:15:11.732] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [product] 문제가 있음 : org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@1fddb660,org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse@1be23143
+[2023-12-25 17:15:11.771] [INFO ] [http-nio-8081-exec-7] com.springboot.java_ssuim.config.security.JwtTokenProvider [resolveToken] HTTp 헤더에서 Token값 추출
+[2023-12-25 17:15:11.771] [INFO ] [http-nio-8081-exec-7] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 추출 완료. token : null
+[2023-12-25 17:15:11.771] [INFO ] [http-nio-8081-exec-7] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [doFilterInternal] token 값 유효성 체크 시작
+[2023-12-25 17:15:11.771] [INFO ] [http-nio-8081-exec-7] com.springboot.java_ssuim.config.security.JwtAuthenticationFilter [product] 문제가 있음 : org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@7d2ab0ce,org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse@79153bb3
+[2023-12-25 17:15:11.779] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.controller.ProductController [getTotalProduct] response Time: 41ms,{}
+[2023-12-25 17:15:11.779] [INFO ] [http-nio-8081-exec-6] com.springboot.java_ssuim.controller.ShipController [getTotalShip] response Time: 28ms,{}
+[2023-12-25 17:15:12.128] [INFO ] [http-nio-8081-exec-7] com.springboot.java_ssuim.controller.ProductController [getTotalProduct] response Time: 317ms,{}
+[2023-12-25 17:33:06.325] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication Starting SecurityApplication using Java 17.0.9 with PID 20160 (C:\프로젝트\java_ssuim\build\classes\java\main started by ohks4 in C:\프로젝트\java_ssuim)
+[2023-12-25 17:33:06.328] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication No active profile set, falling back to 1 default profile: "default"
+[2023-12-25 17:33:07.726] [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-12-25 17:33:07.842] [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 107 ms. Found 3 JPA repository interfaces.
+[2023-12-25 17:33:08.521] [INFO ] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8081 (http)
+[2023-12-25 17:33:08.532] [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8081"]
+[2023-12-25 17:33:08.535] [INFO ] [main] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2023-12-25 17:33:08.535] [INFO ] [main] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/10.1.11]
+[2023-12-25 17:33:08.658] [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2023-12-25 17:33:08.659] [INFO ] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2272 ms
+[2023-12-25 17:33:08.968] [INFO ] [main] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-12-25 17:33:09.062] [INFO ] [main] org.hibernate.Version HHH000412: Hibernate ORM core version 6.2.6.Final
+[2023-12-25 17:33:09.065] [INFO ] [main] org.hibernate.cfg.Environment HHH000406: Using bytecode reflection optimizer
+[2023-12-25 17:33:09.264] [INFO ] [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator HHH000021: Bytecode provider name : bytebuddy
+[2023-12-25 17:33:09.428] [INFO ] [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-12-25 17:33:09.459] [INFO ] [main] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+[2023-12-25 17:33:09.578] [INFO ] [main] com.zaxxer.hikari.pool.HikariPool HikariPool-1 - Added connection org.mariadb.jdbc.Connection@6ffbf0ac
+[2023-12-25 17:33:09.580] [INFO ] [main] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+[2023-12-25 17:33:09.903] [INFO ] [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator HHH000021: Bytecode provider name : bytebuddy
+[2023-12-25 17:33:10.717] [INFO ] [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-12-25 17:33:10.722] [INFO ] [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-12-25 17:33:11.083] [INFO ] [main] com.springboot.java_ssuim.config.security.JwtTokenProvider [init] JwtTokenProvider 내 secretKey 초기화 시작
+[2023-12-25 17:33:11.084] [INFO ] [main] com.springboot.java_ssuim.config.security.JwtTokenProvider [init] Jwt Token Provider내 secretKey 초기화 완료
+[2023-12-25 17:33:11.429] [WARN ] [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-12-25 17:33:11.881] [INFO ] [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 12 endpoint(s) beneath base path '/actuator'
+[2023-12-25 17:33:11.929] [INFO ] [main] org.springframework.security.web.DefaultSecurityFilterChain Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@736af6f3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@322c70bc, org.springframework.security.web.context.SecurityContextHolderFilter@47baf547, org.springframework.security.web.header.HeaderWriterFilter@73ac7716, org.springframework.security.web.authentication.logout.LogoutFilter@2e9bff08, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5dc90de7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3071d086, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b24fb6f, org.springframework.security.web.session.SessionManagementFilter@152bb4cc, org.springframework.security.web.access.ExceptionTranslationFilter@65d3a83, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55e75ce0]
+[2023-12-25 17:33:12.377] [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8081"]
+[2023-12-25 17:33:12.413] [INFO ] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8081 (http) with context path ''
+[2023-12-25 17:33:12.427] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication Started SecurityApplication in 6.732 seconds (process running for 7.656)
+[2023-12-25 17:33:13.077] [INFO ] [RMI TCP Connection(2)-192.168.43.190] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-12-25 17:33:13.078] [INFO ] [RMI TCP Connection(2)-192.168.43.190] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2023-12-25 17:33:13.081] [INFO ] [RMI TCP Connection(2)-192.168.43.190] org.springframework.web.servlet.DispatcherServlet Completed initialization in 3 ms
+[2023-12-25 17:33:28.622] [INFO ] [http-nio-8081-exec-1] com.springboot.java_ssuim.controller.ShipController [getTotalShip] response Time: 448ms,{}
+[2023-12-25 17:33:28.622] [INFO ] [http-nio-8081-exec-3] com.springboot.java_ssuim.controller.ProductController [getTotalProduct] response Time: 448ms,{}
+[2023-12-25 17:33:34.207] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.controller.SignController [signIn] 로그인을 시도하고 있습니다.id: ohjin999, pw: ****
+[2023-12-25 17:33:34.207] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] signDateHandler로 회원 정보 요청
+[2023-12-25 17:33:34.240] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] Id : User(id=ohjin999, password={bcrypt}$2a$10$NJHvDKvkvEf/Yt.V98tQCuhOdnW0k9DNgix80v2Xr5Cb9AXcFUX1i, name=test, email=, phone=, created=2023-11-08T15:25:08, updated=2023-11-28T17:18:23, deleted=null, used=1, auth=[ROLE_USER])
+[2023-12-25 17:33:34.275] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getByID] id: User(id=ohjin999, password={bcrypt}$2a$10$NJHvDKvkvEf/Yt.V98tQCuhOdnW0k9DNgix80v2Xr5Cb9AXcFUX1i, name=test, email=, phone=, created=2023-11-08T15:25:08, updated=2023-11-28T17:18:23, deleted=null, used=1, auth=[ROLE_USER])
+[2023-12-25 17:33:34.275] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] 패스워드 비교 수행
+[2023-12-25 17:33:34.673] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] 패스워드 일치
+[2023-12-25 17:33:34.673] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] SignInResultDto 객체 생성
+[2023-12-25 17:33:34.673] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtTokenProvider [createToken] 토큰 생성 시작
+[2023-12-25 17:33:34.740] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.config.security.JwtTokenProvider [createToken] 토큰 생성 완료
+[2023-12-25 17:33:34.740] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.service.impl.SignServiceImpl [getSignInResult] SignInResultDto 객체에 값 주입 lgoger: SignInResultDto(token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvaGppbjk5OSIsImF1dGgiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTcwMzQ5MzIxNCwiZXhwIjoxNzAzNDk2ODE0fQ.zec-DbGV44fr6Orxf3fimtwUjFQtem_orDs_raCsd_I)
+[2023-12-25 17:33:34.740] [INFO ] [http-nio-8081-exec-4] com.springboot.java_ssuim.controller.SignController [signIn] 정상적으로 로그인되었습니다.id: ohjin999, token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvaGppbjk5OSIsImF1dGgiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTcwMzQ5MzIxNCwiZXhwIjoxNzAzNDk2ODE0fQ.zec-DbGV44fr6Orxf3fimtwUjFQtem_orDs_raCsd_I
+[2023-12-25 17:33:36.233] [INFO ] [http-nio-8081-exec-5] com.springboot.java_ssuim.controller.ProductController [getTotalProduct] response Time: 59ms,{}
+[2023-12-25 17:33:36.257] [INFO ] [http-nio-8081-exec-6] com.springboot.java_ssuim.controller.ShipController [getTotalShip] response Time: 91ms,{}
+[2023-12-25 17:33:36.641] [INFO ] [http-nio-8081-exec-7] com.springboot.java_ssuim.controller.ProductController [getTotalProduct] response Time: 428ms,{}
+[2023-12-25 17:55:25.324] [INFO ] [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-12-25 17:55:25.329] [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+[2023-12-25 17:55:25.339] [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+[2023-12-25 17:55:43.102] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication Starting SecurityApplication using Java 17.0.9 with PID 19112 (C:\프로젝트\java_ssuim\build\classes\java\main started by ohks4 in C:\프로젝트\java_ssuim)
+[2023-12-25 17:55:43.105] [INFO ] [main] com.springboot.java_ssuim.SecurityApplication No active profile set, falling back to 1 default profile: "default"
+[2023-12-25 17:55:44.215] [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-12-25 17:55:44.293] [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 68 ms. Found 3 JPA repository interfaces.
+[2023-12-25 17:55:44.922] [INFO ] [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8081 (http)
+[2023-12-25 17:55:45.036] [INFO ] [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1868 ms
+[2023-12-25 17:55:45.288] [INFO ] [main] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-12-25 17:55:45.368] [INFO ] [main] org.hibernate.Version HHH000412: Hibernate ORM core version 6.2.6.Final
+[2023-12-25 17:55:45.371] [INFO ] [main] org.hibernate.cfg.Environment HHH000406: Using bytecode reflection optimizer
+[2023-12-25 17:55:45.612] [INFO ] [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator HHH000021: Bytecode provider name : bytebuddy
+[2023-12-25 17:55:45.771] [INFO ] [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-12-25 17:55:45.824] [INFO ] [main] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...

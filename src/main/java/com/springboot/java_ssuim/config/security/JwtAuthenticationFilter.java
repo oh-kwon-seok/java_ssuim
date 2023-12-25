@@ -36,14 +36,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                 Authentication authentication = jwtTokenProvider.getAuthentication(token);
                 SecurityContextHolder.getContext().setAuthentication(authentication);
-                LOGGER.info("[doFilterInternal] token 값 유효성 체크 완료");
+                LOGGER.info("[doFilterInternal] token 값 유효성 체크 완료 : {}",token);
             }
 
-
+            LOGGER.info("[product] 문제가 있음 : {},{}",servletRequest,servletResponse);
             filterChain.doFilter(servletRequest,servletResponse);
-
-
-
 
 
 
@@ -76,17 +73,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         }
 
-
-
-
-//        if(token != null && jwtTokenProvider.validateToken(token)){
-//
-//            Authentication authentication = jwtTokenProvider.getAuthentication(token);
-//            SecurityContextHolder.getContext().setAuthentication(authentication);
-//            LOGGER.info("[doFilterInternal] token 값 유효성 체크 완료");
-//        }
-//
-//        filterChain.doFilter(servletRequest,servletResponse);
     }
     private void setResponse(HttpServletResponse response, ErrorMessage errorMessage) throws RuntimeException,IOException {
         response.setContentType("application/json;charset=UTF-8");
